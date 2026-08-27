@@ -3,7 +3,7 @@
 <head>	
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Walten Files - Blog</title>
+  <title>The Walten Files - Galeria de Arquivos</title>
   <style>   
     * {
       box-sizing: border-box;
@@ -15,8 +15,8 @@
       font-family: 'Courier New', Courier, monospace;
       color: #e0e0e0;
       background-color: #0d0d11;
-    
-      background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('The_Walten_Files_Poster.webp');
+     
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('The_Walten_Files_Poster.webp');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -25,128 +25,118 @@
     }
 
     header {
-      background-color: rgba(15, 15, 20, 0.92); 
+      background-color: rgba(15, 15, 20, 0.95); 
       color: #ffffff;
       text-align: center;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto 30px auto;
-      padding: 24px 16px;
+      padding: 20px 16px;
       border: 3px solid #8b0000;
       box-shadow: 0 0 18px rgba(139, 0, 0, 0.8);
       border-radius: 8px;
     }
 
+  
     .header-title-img {
       max-width: 100%;
       height: auto;
-      max-height: 120px;
+      max-height: 110px;
       object-fit: contain;
     }
 
     header p {
-      margin-top: 15px;
-      font-size: 1.05rem;
+      margin-top: 12px;
+      font-size: 1rem;
       color: #cccccc;
-      line-height: 1.4;
     }
     
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       align-items: start;
     }
 
-
-    details.card {
+    
+    .card {
       background-color: rgba(18, 18, 22, 0.94);
       color: #e0e0e0;
       border: 1px solid #333344;
       border-top: 4px solid #8b0000;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    details.card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(139, 0, 0, 0.4);
-    }
-
-   
-    summary {
       padding: 15px;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
       text-align: center;
-      user-select: none;
-      outline: none;
     }
 
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary img {
+    .card img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       border-radius: 4px;
       border: 2px solid #2a2a35;
-      margin-bottom: 12px;
       background-color: #1a1a20;
     }
 
-    summary h2 {
-      margin: 5px 0;
+    .card h2 {
+      margin: 12px 0 6px 0;
       color: #ff4d4d;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
 
     .artigo-autor {
       font-weight: bold;
       color: #8888aa;
       font-size: 0.85rem;
-      margin: 0;
+      margin-top: 0;
+      margin-bottom: 12px;
     }
 
-    .toggle-btn {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: #ff8888;
-      background: rgba(139, 0, 0, 0.2);
-      padding: 4px 8px;
+   
+    .btn-toggle {
+      width: 100%;
+      padding: 8px;
+      background-color: #8b0000;
+      color: #ffffff;
+      border: none;
       border-radius: 4px;
-      border: 1px solid rgba(139, 0, 0, 0.5);
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.2s;
     }
 
+    .btn-toggle:hover {
+      background-color: #b30000;
+    }
 
+    
     .card-content {
-      padding: 0 15px 15px 15px;
+      display: none;
       border-top: 1px solid #2a2a35;
-      margin-top: 5px;
+      padding-top: 10px;
+      text-align: left;
+    }
+
+    .card-content.aberto {
+      display: block;
     }
 
     .card-content p {
       line-height: 1.5;
-      font-size: 0.95rem;
-      margin-top: 12px;
+      font-size: 0.92rem;
       margin-bottom: 15px;
     }
 
-    .actions {
+    .reactions {
       display: flex;
       gap: 8px;
     }
 
-    button {
+    .btn-reaction {
       cursor: pointer;
       padding: 6px 12px;
       background-color: #252530;
@@ -156,7 +146,7 @@
       font-size: 0.85rem;
     }
 
-    button:hover {
+    .btn-reaction:hover {
       background-color: #353545;
       border-color: #ff4d4d;
     }
@@ -166,92 +156,130 @@
 
   <header>    
     <img src="pni21u.png" alt="The Walten Files - INFO" class="header-title-img">
-    <p>Arquivos, segredos e relatórios sobre a família Walten e a tragédia da Bunny Smiles Company. Clique nos cards para abrir/fechar as informações.</p> 
+    <p>Arquivos, personagens e registros sobre a tragédia da Bunny Smiles Company.</p> 
   </header>
 
   <main>
 
-   
-    <details class="card">
-      <summary>
-        <img src="rosemary_wedding.jpg" alt="Rosemary Walten no seu casamento">
-        <h2>O Casamento de Rosemary</h2>
-        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
-        <span class="toggle-btn">▼ Clique para expandir/fechar</span>
-      </summary>
+  
+    <div class="card">
+      <img src="rosemary_wedding.jpg" alt="Rosemary Walten no seu casamento">
+      <h2>O Casamento de Rosemary</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+      
       <div class="card-content">
-        <p>Rosemary Walten era a dedicada esposa de Jack Walten e mãe de Sophie, Edd e Molly. A foto registra o dia de seu casamento, um momento de extrema felicidade antes do colapso da família. Após o desaparecimento misterioso de seu marido em 1974, Rosemary buscou respostas incansavelmente até também desaparecer na instalação K-9.</p>
-        <div class="actions">
-          <button>🌹 <span>0</span></button>
-          <button>👁️ <span>0</span></button>
+        <p>Rosemary Walten era esposa de Jack Walten e mãe de Sophie, Edd e Molly. O registro de seu casamento mostra um momento de felicidade antes dos trágicos acontecimentos de 1974. Após o sumiço de seu marido, ela buscou respostas até também desaparecer misteriosamente na instalação K-9.</p>
+        <div class="reactions">
+          <button class="btn-reaction">🌹 <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
         </div>
       </div>
-    </details>
+    </div>
+
+  
+    <div class="card">
+      <img src="felix_kranken.jpg" alt="Felix Kranken">
+      <h2>Felix Kranken: Co-Fundador</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+
+      <div class="card-content">
+        <p>Co-fundador da Bunny Smiles e parceiro de negócios de Jack. Felix administrava o setor financeiro da empresa. Seus problemas pessoais levaram a um grave acidente na noite de maio de 1974, desencadeando toda a tragédia que marcou a história do restaurante.</p>
+        <div class="reactions">
+          <button class="btn-reaction">🍺 <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="sophie_walten.jpg" alt="Sophie Walten">
+      <h2>Sophie Walten e as Memórias</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+
+      <div class="card-content">
+        <p>A única filha sobrevivente da família Walten. Sophie perdeu parte das memórias de sua infância devido aos eventos traumáticos de 1974. Mais tarde, ela descobre que o jogo arcade "Bunnyfarm" contém pistas diretas sobre o passado de sua família.</p>
+        <div class="reactions">
+          <button class="btn-reaction">🎮 <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <img src="images.jpeg" alt="Bon the Rabbit">
+      <h2>O Animatrônico Bon</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+
+      <div class="card-content">
+        <p>Bon é o principal mascote da marca Bunny Smiles. Criado para trazer alegria às crianças no restaurante, gravações do arquivo K-9 apontam comportamento altamente instável e perigoso fora do horário de funcionamento.</p>
+        <div class="reactions">
+          <button class="btn-reaction">🐰 <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
+        </div>
+      </div>
+    </div>
 
    
-    <details class="card">
-      <summary>
-        <img src="felix_kranken.jpg" alt="Felix Kranken">
-        <h2>Felix Kranken: O Co-Fundador</h2>
-        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
-        <span class="toggle-btn">▼ Clique para expandir/fechar</span>
-      </summary>
+    <div class="card">
+      <img src="jack_poster.jpg" alt="Desaparecimento de Jack Walten">
+      <h2>Desaparecimento de Jack</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+
       <div class="card-content">
-        <p>Co-fundador da Bunny Smiles Company e melhor amigo de Jack Walten. Felix gerenciava o lado financeiro da empresa. Seus sérios problemas pessoais e vícios culminaram em um acidente devastador na noite de maio de 1974, mudando para sempre os rumos da Bunny Smiles.</p>
-        <div class="actions">
-          <button>🍺 <span>0</span></button>
-          <button>👁️ <span>0</span></button>
+        <p>Jack Walten desapareceu subitamente em 11 de junho de 1974. Sua ausência causou o cancelamento de diversos projetos e o colapso gradual da Bunny Smiles Company. Seu paradeiro permanece um dos maiores mistérios.</p>
+        <div class="reactions">
+          <button class="btn-reaction">❓ <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
         </div>
       </div>
-    </details>
+    </div>
 
-    <details class="card">
-      <summary>
-        <img src="sophie_walten.jpg" alt="Sophie Walten">
-        <h2>Sophie Walten e as Memórias</h2>
-        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
-        <span class="toggle-btn">▼ Clique para expandir/fechar</span>
-      </summary>
+   
+    <div class="card">
+      <img src="jack_plush.jpg" alt="Pelúcia de Jack Walten">
+      <h2>Produtos e Relíquias</h2>
+      <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+      <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
+
       <div class="card-content">
-        <p>A única filha sobrevivente de Jack e Rosemary Walten. Sofrendo de amnésia traumática devido aos eventos de sua infância, Sophie começa a recuperar suas memórias perdidas ao jogar um protótipo de arcade misterioso chamado <em>"Bunnyfarm"</em>.</p>
-        <div class="actions">
-          <button>🎮 <span>0</span></button>
-          <button>👁️ <span>0</span></button>
+        <p>Durante a fase de expansão nos anos 70, a empresa planejou a comercialização de brinquedos e colecionáveis baseados na marca. Esta ilustração representa um dos raros protótipos mantidos nos arquivos da companhia.</p>
+        <div class="reactions">
+          <button class="btn-reaction">🧸 <span>0</span></button>
+          <button class="btn-reaction">👁️ <span>0</span></button>
         </div>
       </div>
-    </details>
-
-
-    <details class="card">
-      <summary>
-        <img src="images.jpeg" alt="Bon the Rabbit">
-        <h2>O Animatrônico Bon</h2>
-        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
-        <span class="toggle-btn">▼ Clique para expandir/fechar</span>
-      </summary>
-      <div class="card-content">
-        <p>Bon é o principal mascote da marca. Apesar da imagem amigável nos comerciais da época, registros internos indicam anomalias graves no seu comportamento durante a noite no depósito K-9.</p>
-        <div class="actions">
-          <button>🐰 <span>0</span></button>
-          <button>👁️ <span>0</span></button>
-        </div>
-      </div>
-    </details>
+    </div>
 
   </main>
 
   <script>
-    const botoes = document.querySelectorAll("button");
+ 
+    function alternarPost(botao) {
+      const conteudo = botao.nextElementSibling;
+      conteudo.classList.toggle('aberto');
 
-    botoes.forEach(function(botao) {
-      botao.addEventListener("click", function(event) {
-        
-        event.stopPropagation();
-        
-        let texto = botao.querySelector("span");
-        let contador = Number(texto.textContent);
-        texto.textContent = contador + 1;
-      });  
+      if (conteudo.classList.contains('aberto')) {
+        botao.textContent = "Fechar ▲";
+      } else {
+        botao.textContent = "Ler mais ▼";
+      }
+    }
+
+    const botoesReacao = document.querySelectorAll(".btn-reaction");
+
+    botoesReacao.forEach(function(botao) {
+      botao.addEventListener("click", function() {
+        let span = botao.querySelector("span");
+        let valorAtual = Number(span.textContent);
+        span.textContent = valorAtual + 1;
+      });
     });
   </script>
 </body>

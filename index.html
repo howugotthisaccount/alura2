@@ -21,6 +21,59 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+ 
+    body.modo-claro {
+      background-color: #f4f4f9;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('The_Walten_Files_Poster.webp');
+      color: #1a1a1a;
+    }
+
+    body.modo-claro header {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #1a1a1a;
+      border-color: #b30000;
+      box-shadow: 0 0 18px rgba(179, 0, 0, 0.3);
+    }
+
+    body.modo-claro header p {
+      color: #444444;
+    }
+
+    body.modo-claro .card {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #1a1a1a;
+      border-color: #cccccc;
+      border-top: 4px solid #b30000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    body.modo-claro .artigo-autor {
+      color: #555577;
+    }
+
+    body.modo-claro .card-content {
+      border-top-color: #dddddd;
+    }
+
+    body.modo-claro .btn-reaction {
+      background-color: #e0e0e0;
+      color: #1a1a1a;
+      border-color: #cccccc;
+    }
+
+    body.modo-claro .btn-reaction:hover {
+      background-color: #d0d0d0;
+      border-color: #b30000;
+    }
+
+    body.modo-claro .aviso-sigiloso {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #444444;
+      border-color: #b30000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     header {
@@ -33,9 +86,29 @@
       border: 3px solid #8b0000;
       box-shadow: 0 0 18px rgba(139, 0, 0, 0.8);
       border-radius: 8px;
+      position: relative;
     }
 
    
+    .btn-tema {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #252530;
+      color: #ffffff;
+      border: 1px solid #8b0000;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-tema:hover {
+      background-color: #8b0000;
+    }
+
     .header-title-img {
       max-width: 100%;
       height: auto;
@@ -155,7 +228,6 @@
       border-color: #ff4d4d;
     }
 
-    
     .aviso-sigiloso {
       position: fixed;
       bottom: 15px;
@@ -177,6 +249,11 @@
     }
 
     @media (max-width: 600px) {
+      .btn-tema {
+        position: static;
+        margin-bottom: 15px;
+      }
+
       .aviso-sigiloso {
         position: static;
         max-width: 100%;
@@ -188,7 +265,8 @@
 </head>
 <body>
 
-  <header>    
+  <header>   
+    <button class="btn-tema" id="btnTema" onclick="alternarTema()">☀️ Modo Claro</button>
     <img src="pni21u.png" alt="The Walten Files - INFO" class="header-title-img">
     <div class="autor-pagina">Publicado por: Ou'sa De Metrak</div>
     <p>Arquivos, personagens e registros sobre a tragédia da Bunny Smiles Company.</p> 
@@ -196,7 +274,6 @@
 
   <main>
 
-  
     <div class="card">
       <img src="images (2).jpeg" alt="Rosemary Walten no seu casamento">
       <h2>O Casamento de Rosemary</h2>
@@ -212,7 +289,6 @@
       </div>
     </div>
 
-   
     <div class="card">
       <img src="images (3).jpeg" alt="Felix Kranken">
       <h2>Felix Kranken: Co-Fundador</h2>
@@ -228,7 +304,6 @@
       </div>
     </div>
 
-   
     <div class="card">
       <img src="images (1).jpeg" alt="Sophie Walten">
       <h2>Sophie Walten e as Memórias</h2>
@@ -244,7 +319,6 @@
       </div>
     </div>
 
-   
     <div class="card">
       <img src="images.jpeg" alt="Bon the Rabbit">
       <h2>O Animatrônico Bon</h2>
@@ -260,7 +334,6 @@
       </div>
     </div>
 
-    
     <div class="card">
       <img src="MV5BZDg2NGM4OGItMWQwMC00ZmJhLWE3NGYtY2Q5ODQzYzcxMTkyXkEyXkFqcGc@._V1_.jpg" alt="Desaparecimento de Jack Walten">
       <h2>Desaparecimento de Jack</h2>
@@ -276,7 +349,6 @@
       </div>
     </div>
 
-   
     <div class="card">
       <img src="bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Pelúcia de Jack Walten">
       <h2>Produtos e Relíquias</h2>
@@ -294,13 +366,25 @@
 
   </main>
 
-  
   <div class="aviso-sigiloso">
     <strong>[NOTA DE ARQUIVO]</strong><br>
     Tudo o que foi postado aqui foi gentilmente doado por um arquivista da Bunny Smiles. Sua identidade permanece sigilosa.
   </div>
 
   <script>
+    function alternarTema() {
+      const body = document.body;
+      const btnTema = document.getElementById('btnTema');
+      
+      body.classList.toggle('modo-claro');
+
+      if (body.classList.contains('modo-claro')) {
+        btnTema.textContent = '🌙 Modo Escuro';
+      } else {
+        btnTema.textContent = '☀️ Modo Claro';
+      }
+    }
+
     function alternarPost(botao) {
       const conteudo = botao.nextElementSibling;
       conteudo.classList.toggle('aberto');

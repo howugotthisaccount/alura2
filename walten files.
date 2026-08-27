@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Walten Files - Blog</title>
+  <style>   
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px 10px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #e0e0e0;
+      /* Fundo com a última imagem em overlay escuro */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), url('The_Walten_Files_Poster.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(15, 15, 20, 0.9); 
+      color: #ffffff;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      padding: 24px 16px;
+      border: 3px solid #8b0000;
+      box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
+      border-radius: 8px;
+    }
+
+    /* Imagem de título (pni21u.png) */
+    .header-title-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.8));
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.05rem;
+      color: #cccccc;
+      line-height: 1.4;
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    article {
+      display: flex;
+      gap: 20px;
+      background-color: rgba(18, 18, 22, 0.92);
+      color: #e0e0e0;
+      padding: 20px;
+      border: 1px solid #333344;
+      border-left: 5px solid #8b0000;
+      align-items: flex-start;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    article:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(139, 0, 0, 0.3);
+    }
+
+    article img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 2px solid #2a2a35;
+      flex-shrink: 0;
+    }
+
+    article h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #ff4d4d;
+      font-size: 1.4rem;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+      color: #8888aa;
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    article p {
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 8px 14px;
+      margin-right: 8px;
+      background-color: #252530;
+      color: #ffffff;
+      border: 1px solid #444455;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #353545;
+      border-color: #ff4d4d;
+    }
+
+    /* Layout Responsivo para Celulares */
+    @media (max-width: 600px) {
+      article {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      article img {
+        width: 100%;
+        max-width: 250px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>    
+    <img src="pni21u.png" alt="The Walten Files - INFO" class="header-title-img">
+    <p>Arquivos, segredos e relatórios sobre o desaparecimento de Jack Walten e o mistério da Bunny Smiles Company.</p> 
+  </header>
+
+  <main>
+    <article>
+      <img src="images.jpeg" alt="Bon the Rabbit">
+      <div>
+        <h2>O Mistério de Bon</h2>
+        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+        <p>Bon é o principal animatrônico da <em>K-9 Facility</em>. Embora pareça um mascote adorável nos comerciais da década de 70, há relatórios perturbationes indicando mau funcionamento e comportamentos hostis durante a noite.</p>
+        <button>🐰 <span>0</span></button>
+        <button>👁️ <span>0</span></button>
+      </div>
+    </article>
+
+    <article>
+      <img src="MV5BZDg2NGM4OGItMWQwMC00ZmJhLWE3NGYtY2Q5ODQzYzcxMTkyXkEyXkFqcGc@._V1_.jpg" alt="Relatório de Desaparecimento de Jack Walten">
+      <div>
+        <h2>O Desaparecimento de Jack Walten</h2>
+        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+        <p>Co-fundador da Bunny Smiles Company ao lado de Felix Kranken, Jack Walten desapareceu misteriosamente em 1974. Nenhuma pista concreta foi encontrada até hoje. O que realmente aconteceu naquela noite?</p>
+        <button>🐰 <span>0</span></button>
+        <button>👁️ <span>0</span></button>
+      </div>
+    </article>
+
+    <article>
+      <img src="bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Plush de Jack Walten">
+      <div>
+        <h2>Produtos e Relíquias da Época</h2>
+        <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
+        <p>Antes do fechamento do restaurante, a Bunny Smiles produziu uma linha limitada de brinquedos e pelúcias. Esta é uma das poucas ilustrações remanescentes que sobraram dos arquivos da empresa.</p>
+        <button>🐰 <span>0</span></button>
+        <button>👁️ <span>0</span></button>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function(botao) {
+      botao.addEventListener("click", function botaoClicado() {
+        console.log("Reação registrada!"); 
+        let texto = botao.querySelector("span");
+        let contador = Number(texto.textContent);
+        texto.textContent = contador + 1;
+      });  
+    });
+  </script>
+</body>
+</html>

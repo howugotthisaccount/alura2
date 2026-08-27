@@ -83,7 +83,7 @@
       height: 180px;
       object-fit: cover;
       border-radius: 4px;
-      border: 2px solid #2a2a35;
+      border: 2px solid #2A2A35;
       flex-shrink: 0;
     }
 

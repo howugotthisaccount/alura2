@@ -15,7 +15,7 @@
       font-family: 'Courier New', Courier, monospace;
       color: #e0e0e0;
       background-color: #0d0d11;
-      /* Imagem de fundo mais visível (overlay reduzido de 0.85 para 0.55) */
+    
       background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('The_Walten_Files_Poster.webp');
       background-size: cover;
       background-position: center;
@@ -50,7 +50,6 @@
       line-height: 1.4;
     }
     
-    /* Layout em Grade (Grid) lado a lado */
     main {
       max-width: 1000px;
       margin: 0 auto;
@@ -60,7 +59,7 @@
       align-items: start;
     }
 
-    /* Card com funcionalidade de Abrir / Fechar */
+
     details.card {
       background-color: rgba(18, 18, 22, 0.94);
       color: #e0e0e0;
@@ -77,7 +76,7 @@
       box-shadow: 0 6px 18px rgba(139, 0, 0, 0.4);
     }
 
-    /* Cabeçalho do Card (Sempre Visível) */
+   
     summary {
       padding: 15px;
       cursor: pointer;
@@ -128,7 +127,7 @@
       border: 1px solid rgba(139, 0, 0, 0.5);
     }
 
-    /* Conteúdo Expansível (Aparece ao Clicar) */
+
     .card-content {
       padding: 0 15px 15px 15px;
       border-top: 1px solid #2a2a35;
@@ -172,7 +171,7 @@
 
   <main>
 
-    <!-- Post 1: Rosemary Walten (Casamento) -->
+   
     <details class="card">
       <summary>
         <img src="rosemary_wedding.jpg" alt="Rosemary Walten no seu casamento">
@@ -189,7 +188,7 @@
       </div>
     </details>
 
-    <!-- Post 2: Felix Kranken -->
+   
     <details class="card">
       <summary>
         <img src="felix_kranken.jpg" alt="Felix Kranken">
@@ -206,7 +205,6 @@
       </div>
     </details>
 
-    <!-- Post 3: Sophie Walten -->
     <details class="card">
       <summary>
         <img src="sophie_walten.jpg" alt="Sophie Walten">
@@ -223,7 +221,7 @@
       </div>
     </details>
 
-    <!-- Post 4: Bon -->
+
     <details class="card">
       <summary>
         <img src="images.jpeg" alt="Bon the Rabbit">
@@ -247,7 +245,7 @@
 
     botoes.forEach(function(botao) {
       botao.addEventListener("click", function(event) {
-        // Impede que o clique no botão abra/feche o card
+        
         event.stopPropagation();
         
         let texto = botao.querySelector("span");

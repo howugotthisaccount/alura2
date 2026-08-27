@@ -11,11 +11,10 @@
 
     body {
       margin: 0;
-      padding: 20px 10px;
+      padding: 20px 10px 80px 10px; 
       font-family: 'Courier New', Courier, monospace;
       color: #e0e0e0;
       background-color: #0d0d11;
-     
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('The_Walten_Files_Poster.webp');
       background-size: cover;
       background-position: center;
@@ -30,24 +29,25 @@
       text-align: center;
       max-width: 1000px;
       margin: 0 auto 30px auto;
-      padding: 20px 16px;
+      padding: 25px 16px;
       border: 3px solid #8b0000;
       box-shadow: 0 0 18px rgba(139, 0, 0, 0.8);
       border-radius: 8px;
     }
 
+   
     .header-title-img {
       max-width: 100%;
       height: auto;
-      max-height: 110px;
+      max-height: 180px;
       object-fit: contain;
     }
 
     .autor-pagina {
       font-weight: bold;
       color: #ff4d4d;
-      font-size: 0.95rem;
-      margin-top: 8px;
+      font-size: 1.05rem;
+      margin-top: 12px;
       margin-bottom: 5px;
     }
 
@@ -154,20 +154,49 @@
       background-color: #353545;
       border-color: #ff4d4d;
     }
+
+    
+    .aviso-sigiloso {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: rgba(10, 10, 15, 0.92);
+      color: #aaaaaa;
+      border: 1px solid #8b0000;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      max-width: 260px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      line-height: 1.3;
+    }
+
+    .aviso-sigiloso strong {
+      color: #ff4d4d;
+    }
+
+    @media (max-width: 600px) {
+      .aviso-sigiloso {
+        position: static;
+        max-width: 100%;
+        margin: 20px auto 0 auto;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>    
-   
     <img src="pni21u.png" alt="The Walten Files - INFO" class="header-title-img">
-    <div class="autor-pagina">publicado por Ou'Sa De Metrak</div>
+    <div class="autor-pagina">Publicado por: Ou'sa De Metrak</div>
     <p>Arquivos, personagens e registros sobre a tragédia da Bunny Smiles Company.</p> 
   </header>
 
   <main>
 
-
+  
     <div class="card">
       <img src="images (2).jpeg" alt="Rosemary Walten no seu casamento">
       <h2>O Casamento de Rosemary</h2>
@@ -183,6 +212,7 @@
       </div>
     </div>
 
+   
     <div class="card">
       <img src="images (3).jpeg" alt="Felix Kranken">
       <h2>Felix Kranken: Co-Fundador</h2>
@@ -214,7 +244,7 @@
       </div>
     </div>
 
- 
+   
     <div class="card">
       <img src="images.jpeg" alt="Bon the Rabbit">
       <h2>O Animatrônico Bon</h2>
@@ -230,7 +260,7 @@
       </div>
     </div>
 
-  
+    
     <div class="card">
       <img src="MV5BZDg2NGM4OGItMWQwMC00ZmJhLWE3NGYtY2Q5ODQzYzcxMTkyXkEyXkFqcGc@._V1_.jpg" alt="Desaparecimento de Jack Walten">
       <h2>Desaparecimento de Jack</h2>
@@ -246,7 +276,7 @@
       </div>
     </div>
 
-    
+   
     <div class="card">
       <img src="bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Pelúcia de Jack Walten">
       <h2>Produtos e Relíquias</h2>
@@ -263,6 +293,12 @@
     </div>
 
   </main>
+
+  
+  <div class="aviso-sigiloso">
+    <strong>[NOTA DE ARQUIVO]</strong><br>
+    Tudo o que foi postado aqui foi gentilmente doado por um arquivista da Bunny Smiles. Sua identidade permanece sigilosa.
+  </div>
 
   <script>
     function alternarPost(botao) {

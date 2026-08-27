@@ -14,7 +14,6 @@
       padding: 20px 10px;
       font-family: 'Courier New', Courier, monospace;
       color: #e0e0e0;
-      /* Fundo com a última imagem em overlay escuro */
       background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), url('The_Walten_Files_Poster.webp');
       background-size: cover;
       background-position: center;
@@ -34,8 +33,6 @@
       box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
       border-radius: 8px;
     }
-
-    /* Imagem de título (pni21u.png) */
     .header-title-img {
       max-width: 100%;
       height: auto;

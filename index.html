@@ -36,7 +36,6 @@
       border-radius: 8px;
     }
 
-  
     .header-title-img {
       max-width: 100%;
       height: auto;
@@ -44,8 +43,16 @@
       object-fit: contain;
     }
 
+    .autor-pagina {
+      font-weight: bold;
+      color: #ff4d4d;
+      font-size: 0.95rem;
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+
     header p {
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 1rem;
       color: #cccccc;
     }
@@ -59,7 +66,6 @@
       align-items: start;
     }
 
-    
     .card {
       background-color: rgba(18, 18, 22, 0.94);
       color: #e0e0e0;
@@ -94,7 +100,6 @@
       margin-bottom: 12px;
     }
 
-   
     .btn-toggle {
       width: 100%;
       padding: 8px;
@@ -113,7 +118,6 @@
       background-color: #b30000;
     }
 
-    
     .card-content {
       display: none;
       border-top: 1px solid #2a2a35;
@@ -155,21 +159,23 @@
 <body>
 
   <header>    
+   
     <img src="pni21u.png" alt="The Walten Files - INFO" class="header-title-img">
+    <div class="autor-pagina">publicado por Ou'Sa De Metrak</div>
     <p>Arquivos, personagens e registros sobre a tragédia da Bunny Smiles Company.</p> 
   </header>
 
   <main>
 
-  
+
     <div class="card">
-      <img src="rosemary_wedding.jpg" alt="Rosemary Walten no seu casamento">
+      <img src="images (2).jpeg" alt="Rosemary Walten no seu casamento">
       <h2>O Casamento de Rosemary</h2>
       <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
       <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
       
       <div class="card-content">
-        <p>Rosemary Walten era esposa de Jack Walten e mãe de Sophie, Edd e Molly. O registro de seu casamento mostra um momento de felicidade antes dos trágicos acontecimentos de 1974. Após o sumiço de seu marido, ela buscou respostas até também desaparecer misteriosamente na instalação K-9.</p>
+        <p>Rosemary Walten era esposa de Jack Walten e mãe de Sophie, Edd e Molly. O registro de seu casamento mostra um momento de felicidade antes dos trágicos acontecimentos de 1974. Após o sumiço de seu marido, ela buscou respostas incansavelmente até também desaparecer misteriosamente na instalação K-9.</p>
         <div class="reactions">
           <button class="btn-reaction">🌹 <span>0</span></button>
           <button class="btn-reaction">👁️ <span>0</span></button>
@@ -177,9 +183,8 @@
       </div>
     </div>
 
-  
     <div class="card">
-      <img src="felix_kranken.jpg" alt="Felix Kranken">
+      <img src="images (3).jpeg" alt="Felix Kranken">
       <h2>Felix Kranken: Co-Fundador</h2>
       <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
       <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
@@ -193,9 +198,9 @@
       </div>
     </div>
 
-
+   
     <div class="card">
-      <img src="sophie_walten.jpg" alt="Sophie Walten">
+      <img src="images (1).jpeg" alt="Sophie Walten">
       <h2>Sophie Walten e as Memórias</h2>
       <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
       <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
@@ -209,7 +214,7 @@
       </div>
     </div>
 
-
+ 
     <div class="card">
       <img src="images.jpeg" alt="Bon the Rabbit">
       <h2>O Animatrônico Bon</h2>
@@ -225,9 +230,9 @@
       </div>
     </div>
 
-   
+  
     <div class="card">
-      <img src="jack_poster.jpg" alt="Desaparecimento de Jack Walten">
+      <img src="MV5BZDg2NGM4OGItMWQwMC00ZmJhLWE3NGYtY2Q5ODQzYzcxMTkyXkEyXkFqcGc@._V1_.jpg" alt="Desaparecimento de Jack Walten">
       <h2>Desaparecimento de Jack</h2>
       <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
       <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
@@ -241,9 +246,9 @@
       </div>
     </div>
 
-   
+    
     <div class="card">
-      <img src="jack_plush.jpg" alt="Pelúcia de Jack Walten">
+      <img src="bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Pelúcia de Jack Walten">
       <h2>Produtos e Relíquias</h2>
       <p class="artigo-autor">Por: Arquivista da Bunny Smiles</p>
       <button class="btn-toggle" onclick="alternarPost(this)">Ler mais ▼</button>
@@ -260,7 +265,6 @@
   </main>
 
   <script>
- 
     function alternarPost(botao) {
       const conteudo = botao.nextElementSibling;
       conteudo.classList.toggle('aberto');
